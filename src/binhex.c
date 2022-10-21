@@ -79,7 +79,7 @@ int16_t main(int argc, char** argv) {
 	}
 	int32_t fd = open(argv[1], O_RDONLY);
 	if (fd == -1) {
-		printf("failed to open file %s\n", argv[1]);
+		printf("failed to open file '%s'\n", argv[1]);
 		return -1;
 	}
 	
@@ -92,7 +92,7 @@ int16_t main(int argc, char** argv) {
 	
 	fd = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, S_IWUSR | S_IRUSR);
 	if (fd == -1) {
-		printf("failed to create file %s\n", argv[2]);
+		printf("failed to create file '%s'\n", argv[2]);
 		munmap(bin, binsz);
 		return -1;
 	}
